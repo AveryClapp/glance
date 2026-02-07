@@ -10,6 +10,8 @@
 
 #ifdef __ARM_NEON
 #include <arm_neon.h>
+#elif defined(__SSE2__)
+#include <emmintrin.h>
 #endif
 
 // --- Utility ---
@@ -33,7 +35,7 @@ std::string unquote(std::string_view field) {
   return std::string(field);
 }
 
-// --- NEON-accelerated newline counting ---
+// --- SIMD-accelerated newline counting ---
 
 static size_t count_newlines(const char *data, size_t len) {
   size_t count = 0;
@@ -54,6 +56,22 @@ static size_t count_newlines(const char *data, size_t len) {
       i += 16;
     }
     count += vaddvq_u8(acc);
+  }
+#elif defined(__SSE2__)
+  __m128i nl = _mm_set1_epi8('\n');
+
+  while (i + 16 <= len) {
+    int batch_count = 0;
+    size_t remaining = (len - i) / 16;
+    size_t batch = std::min(remaining, static_cast<size_t>(255));
+    for (size_t j = 0; j < batch; ++j) {
+      __m128i chunk =
+          _mm_loadu_si128(reinterpret_cast<const __m128i *>(data + i));
+      int mask = _mm_movemask_epi8(_mm_cmpeq_epi8(chunk, nl));
+      batch_count += __builtin_popcount(mask);
+      i += 16;
+    }
+    count += batch_count;
   }
 #endif
 

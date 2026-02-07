@@ -110,9 +110,9 @@ Benchmarked on 5M rows (307 MB), Apple Silicon, Release build:
 
 Key techniques:
 - **mmap** for zero-copy file access
-- **Lazy parsing**: only parse rows needed for display, NEON-count the rest
+- **Lazy parsing**: only parse rows needed for display, SIMD-count the rest
 - **Flat storage**: single `vector<string_view>` with stride, no per-row allocations
-- **ARM NEON SIMD** for newline counting (~20 GB/s)
+- **SIMD newline counting**: ARM NEON on Apple Silicon / Graviton, SSE2 on x86-64
 - **memchr fast-path** for line-end detection
 
 ## Options
