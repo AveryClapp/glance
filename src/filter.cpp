@@ -1,6 +1,7 @@
 #include "include/filter.hpp"
 #include "include/csv_reader.hpp"
 #include <algorithm>
+#include <cstdint>
 #include <cstdlib>
 #include <numeric>
 #include <span>

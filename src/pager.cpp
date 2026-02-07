@@ -1,6 +1,7 @@
 #include "include/pager.hpp"
 #include <algorithm>
 #include <cerrno>
+#include <cstdint>
 #include <csignal>
 #include <cstdio>
 #include <cstring>
