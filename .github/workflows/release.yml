@@ -41,7 +41,7 @@ jobs:
         run: cp build/glance glance-${{ matrix.name }}
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: glance-${{ matrix.name }}
           path: glance-${{ matrix.name }}
