@@ -1,0 +1,10 @@
+id,label,value,notes
+1,"",100,normal row
+2,hello,,empty value
+3,"123",456,quoted number
+4,world,789,"has ""quotes"" inside"
+5,test,0,zero value
+6,"comma, here",999,"multi, commas, present"
+7,single,-42,negative number
+8,"",""," "
+9,last,2147483647,max int

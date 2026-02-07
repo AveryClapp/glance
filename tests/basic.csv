@@ -1,0 +1,11 @@
+name,age,salary,active,start_date,department
+Alice,30,$85000.00,true,2020-01-15,Engineering
+Bob,25,$72000.50,false,2021-03-22,Marketing
+Charlie,35,$95000.00,true,2019-07-01,Engineering
+Diana,28,$68000.00,true,2022-11-10,Sales
+Eve,32,$91000.75,false,2018-05-30,Engineering
+Frank,45,$120000.00,true,2015-02-14,Management
+Grace,27,$70000.00,true,2023-01-05,Marketing
+Hank,38,$105000.00,false,2017-09-18,Sales
+Ivy,29,$78000.25,true,2021-06-12,Engineering
+Jack,33,$88000.00,true,2020-08-03,Management

@@ -1,0 +1,11 @@
+product;price;quantity;in_stock;category
+Widget A;$12.99;150;true;Electronics
+Widget B;$7.50;300;true;Electronics
+Gadget X;$45.00;25;false;Tools
+Gadget Y;$89.99;10;true;Tools
+Cable USB;$3.99;1000;true;Accessories
+Cable HDMI;$9.99;500;true;Accessories
+Mount Wall;$22.50;75;false;Hardware
+Mount Desk;$35.00;40;true;Hardware
+Adapter AC;$15.00;200;true;Electronics
+Adapter DC;$11.50;180;true;Electronics
