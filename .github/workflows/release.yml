@@ -55,7 +55,7 @@ jobs:
         run: cp build/glance glance-${{ matrix.name }}
 
       - name: Upload release asset
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ needs.release-please.outputs.tag_name }}
           files: glance-${{ matrix.name }}
